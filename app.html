@@ -10,18 +10,25 @@
 <button onclick="rotate('V')">RotateV</button>
 <button onclick="rotate('H')">RotateH</button>
 <button onclick="copyToClipBoard('Hi,你好')">copyToClipBoard</button>
+<button onclick="toast('toast,你好')">toast</button>
 
 <script>
 function rotate(data){
-var ret=android.callJava('setOrientation',{dir:data});
+var ret=android.callJava('setOrientation','{"dir":"'+data+'"}');
 console.log(ret);
+    toast(ret);
 }
 
 function copyToClipBoard(data){
-var ret=android.callJava('copyToClipBoard',{content:data});
+var ret=android.callJava('copyToClipBoard','{"content":"'+data+'"}');
 console.log(ret);
+    toast(ret);
 }
 
+    function toast(data){
+        var ret=android.callJava('toast',data);
+console.log(ret);
+    }
 </script>
 </body>
 </html>
