@@ -11,7 +11,7 @@
 <button onclick="rotate('H')">RotateH</button>
 <button onclick="copyToClipBoard('Hi,你好')">copyToClipBoard</button>
 
-<script type="javascript">
+<script>
 function rotate(data){
 var ret=android.callJava('setOrientation',{dir:data});
 console.log(ret);
