@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>App demo</title>
+</head>
+<body>
+<h1>App Demo</h1>
+<button onclick="rotate('V')">RotateV</button>
+<button onclick="rotate('H')">RotateH</button>
+<button onclick="copyToClipBoard('Hi,你好')">copyToClipBoard</button>
+
+<script type="javascript">
+function rotate(data){
+var ret=android.callJava('setOrientation',{dir:data});
+console.log(ret);
+}
+
+function copyToClipBoard(data){
+var ret=android.callJava('copyToClipBoard',{content:data});
+console.log(ret);
+}
+
+</script>
+</body>
+</html>
